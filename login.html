@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>StockPlus</title>
+</head>
+
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="form-container" id="login-form">
+
+        <div class="wrapper">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="remember-forget">
+                    <label><input type="checkbox" name="" id="">Remember me</label>
+                    <a href="#">Forget Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+
+                <div class="register-link">
+                    <p>Don't have an account?
+                        <a href="#" id="show-registration">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-container" id="registration-form" style="display: none;">
+        <div class="registration-wrapper">
+            <form action="">
+                <h1>Register</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Confirm Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <div id="registration-success" class="hidden">Registration Successful!</div>
+            <p>Already have an account? <a href="#" id="back-to-login">Back to login</a></p>
+
+        </div>
+        <div>
+
+
+
+            <script src="script.js"></script>
+            <script>
+                const registerLink = document.getElementById('show-registration');
+                const loginFormContainer = document.getElementById('login-form');
+                const registrationFormContainer = document.getElementById('registration-form');
+
+                registerLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    loginFormContainer.style.display = 'none'; // Hide the login form container
+                    registrationFormContainer.style.display = 'block'; // Show the registration form container
+                });
+            </script>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
